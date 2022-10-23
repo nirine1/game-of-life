@@ -1,0 +1,61 @@
+body {
+    font-size: 16px;
+    background-color: #eee;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#commands_div {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.25rem;
+    z-index: 10;
+}
+
+#game_board {
+    background-color: #fff;
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+}
+
+#iteration_number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #a00;
+    z-index: 10;
+}
+
+.alive {
+    background-color: #000;
+}
+
+.fa-pause {
+    color: #a00;
+}
+
+.fa-play {
+    color: #080;
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
+.cell {
+    border: 1px solid #aaa;
+}
+
+.visually_hidden {
+    display: none !important;
+}
