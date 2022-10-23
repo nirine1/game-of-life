@@ -1,6 +1,6 @@
 body {
     font-size: 16px;
-    background-color: #eee;
+    background-color: #111;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -8,6 +8,10 @@ body {
     display: flex;
     text-align: center;
     justify-content: center;
+}
+
+button {
+    cursor: pointer;
 }
 
 #commands_div {
@@ -25,6 +29,7 @@ body {
     display: grid;
     grid-template-columns: repeat(21, 1fr);
     grid-template-rows: repeat(21, 1fr);
+    margin-top: 12vmin;
 }
 
 #iteration_number {
@@ -36,8 +41,39 @@ body {
     z-index: 10;
 }
 
+#setting {
+    position: absolute;
+    background-color: #fff;
+    border: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    padding: 20px;
+    text-align: left;
+    transition: all cubic-bezier(0.075, 0.82, 1.125, 1);
+}
+
+#setting .content {
+    position: relative;
+}
+
+#show_setting {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.25rem;
+    background-color: #fff;
+    border: 3px solid aqua;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
 .alive {
-    background-color: #000;
+    background-color: #ffee00 !important;
 }
 
 .fa-pause {
@@ -53,6 +89,7 @@ body {
 }
 
 .cell {
+    background-color: #ccc;
     border: 1px solid #aaa;
 }
 

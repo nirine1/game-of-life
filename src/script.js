@@ -42,11 +42,6 @@ function play(current_time) {
     }
     last_render_time = current_time;
 
-    game.cells = document.querySelectorAll('.cell');
-    game.cells.forEach(cell => {
-        cell.removeEventListener('click', handleCellsClick);
-    });
-
     update(game);
 
     iteration_number.textContent++;
