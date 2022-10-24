@@ -10,7 +10,24 @@ let game = {
 let pause_button = document.querySelector('.fa-pause');
 let play_button = document.querySelector('.fa-play');
 
-let game_speed = 5;
+let setting_div = document.getElementById('setting');
+let setting_button = document.getElementById('show_setting_button');
+setting_button.addEventListener('click', () => {
+    setting_div.classList.toggle('hidden_setting');
+});
+
+
+let game_speed_range = document.getElementById('game_speed');
+let game_speed = game_speed_range.value;
+game_speed_range.oninput = () => {
+    let min = game_speed_range.min;
+    let max = game_speed_range.max;
+    let val = game_speed_range.value
+    game_speed = val;
+
+    game_speed_range.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%';
+};
+
 let last_render_time = 0;
 
 let iteration_number = document.getElementById('iteration_number');
@@ -59,7 +76,6 @@ function pause() {
 function handleCellsClick(e) {
     e.target.classList.toggle('alive');
 }
-
 
 pause_button.addEventListener('click', () => {
     play_button.classList.toggle('visually_hidden');
